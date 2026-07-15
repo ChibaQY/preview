@@ -28,3 +28,7 @@ cd preview
 ## License
 
 MIT
+
+---
+
+> 本网页由 [RikkaHub](https://github.com/rikkahub/rikkahub) 搭配 DeepSeek V4 Flash 独立编写而成。
