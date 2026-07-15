@@ -4,7 +4,7 @@
 
 ## 用法
 
-1. 打开 [preview](https://chibaqy.github.io/preview/app.html)
+1. 打开 [preview](https://chibaqy.github.io/preview)
 2. 点击「选择文件夹」或拖拽文件夹到页面
 3. 自动加载文件夹内所有 HTML 文件
 4. 侧边栏点文件切换预览，底部标签栏快速切换页面
