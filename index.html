@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Preview — 选择文件夹，立即预览 HTML，不需要配置。">
+  <title>Preview — 本地 HTML 预览</title>
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <nav class="nav" role="navigation">
+    <span class="nav-brand">Preview</span>
+    <button class="nav-theme" id="themeBtn" type="button" aria-label="切换深色模式">
+      <svg class="icon-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="10" cy="10" r="3.5"/>
+        <line x1="10" y1="1" x2="10" y2="3"/><line x1="10" y1="17" x2="10" y2="19"/>
+        <line x1="3.1" y1="3.1" x2="4.5" y2="4.5"/><line x1="15.5" y1="15.5" x2="16.9" y2="16.9"/>
+        <line x1="1" y1="10" x2="3" y2="10"/><line x1="17" y1="10" x2="19" y2="10"/>
+        <line x1="3.1" y1="16.9" x2="4.5" y2="15.5"/><line x1="15.5" y1="4.5" x2="16.9" y2="3.1"/>
+      </svg>
+      <svg class="icon-moon" hidden viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M17 10.5A7.5 7.5 0 1 1 9.5 3a6 6 0 0 0 7.5 7.5z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <section class="hero">
+
+    <div class="hero-main">
+      <div class="hero-txt">
+        <h1>Preview</h1>
+        <p>给开发者用的本地 HTML 预览工具。<br>选一个文件夹，立刻预览页面，不需要配服务器。</p>
+      </div>
+      <div class="hero-act">
+        <a href="app.html" class="btn btn-pri">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+          打开 Preview
+        </a>
+        <p class="hint">拖拽文件夹 · <kbd>⌘O</kbd> 快速打开</p>
+      </div>
+    </div>
+
+    <div class="mockup" role="img" aria-label="Preview 应用截图">
+      <div class="mbar">
+        <div class="mbar-l">
+          <div class="mbar-btn">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="2.5" y1="4.5" x2="15.5" y2="4.5"/><line x1="2.5" y1="9" x2="15.5" y2="9"/><line x1="2.5" y1="13.5" x2="15.5" y2="13.5"/>
+            </svg>
+          </div>
+          <span class="mbar-title">Preview</span>
+        </div>
+        <div class="mbar-r">
+          <div class="mbar-dot">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M17 10.5A7.5 7.5 0 1 1 9.5 3a6 6 0 0 0 7.5 7.5z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="mbody">
+        <div class="mside">
+          <div class="mside-h">
+            <h2>文件</h2>
+            <div class="mside-x">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <line x1="4" y1="4" x2="16" y2="16"/><line x1="16" y1="4" x2="4" y2="16"/>
+              </svg>
+            </div>
+          </div>
+          <div class="mside-s">
+            <div class="mside-sf">&nbsp;</div>
+          </div>
+          <div class="mtree">
+            <div class="mi act">
+              <div class="mic" style="background:#aeaeb2;border-radius:2px;"></div>
+              <div class="min act"></div>
+            </div>
+            <div class="mi">
+              <div class="mic" style="background:#0071e3;border-radius:2px;"></div>
+              <div class="min w6"></div>
+            </div>
+            <div class="mi">
+              <div class="mic" style="background:#0071e3;opacity:0.6;border-radius:2px;"></div>
+              <div class="min w4"></div>
+            </div>
+            <div class="mi">
+              <div class="mic" style="background:#e8890c;border-radius:2px;"></div>
+              <div class="min w5"></div>
+            </div>
+            <div class="mi">
+              <div class="mic" style="background:#aeaeb2;border-radius:2px;"></div>
+              <div class="min w3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mmain">
+          <div class="mphone">
+            <div class="mnotch">
+              <div class="mns"></div>
+              <div class="mnc"></div>
+            </div>
+            <div class="mscreen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+              <p>打开一个文件夹</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mtabs">
+        <div class="mtab act">index.html</div>
+        <div class="mtab">about.html</div>
+        <div class="mtab">contact.html</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="sec" aria-label="功能特性">
+    <p class="sec-label">Features</p>
+    <div class="fea">
+      <div class="fea-v">
+        <div class="fm">
+          <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
+          <div class="fmbody">
+            <div class="fml w6"></div>
+            <div class="fml w8"></div>
+            <div class="fml w4"></div>
+            <div class="fml accent w6"></div>
+            <div class="fml w8"></div>
+            <div class="fml w3"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fea-t">
+        <h3>本地运行</h3>
+        <p>无需服务器，不离开浏览器，直接在本地预览 HTML 文件及其所有依赖。打开文件夹，立刻看到页面。</p>
+      </div>
+    </div>
+    <div class="fea">
+      <div class="fea-v">
+        <div class="fdev">
+          <div class="fdp"><div class="fdpi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+          <div class="fdt"><div class="fdti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+          <div class="fdd"><div class="fddi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+        </div>
+      </div>
+      <div class="fea-t">
+        <h3>多设备模拟</h3>
+        <p>自动根据窗口尺寸切换手机、平板、桌面三种预览外壳。所见即所得，不用打开开发者工具。</p>
+      </div>
+    </div>
+    <div class="fea">
+      <div class="fea-v">
+        <div class="fm">
+          <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
+          <div class="fmbody">
+            <div class="fml color w6"></div>
+            <div class="fml w8"></div>
+            <div class="fml color w4"></div>
+            <div class="fml w6"></div>
+            <div class="fml color w8"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fea-t">
+        <h3>资源自动注入</h3>
+        <p>CSS、JS、图片、字体 — 页面引用的所有资源自动解析、内联加载。不需要配路径，打开就能看。</p>
+      </div>
+    </div>
+    <div class="fea">
+      <div class="fea-v">
+        <div class="ftab">
+          <div class="ft act"></div>
+          <div class="ft"></div>
+          <div class="ft"></div>
+        </div>
+      </div>
+      <div class="fea-t">
+        <h3>多页面切换</h3>
+        <p>文件夹里有多个 HTML 文件？底部的标签栏让你一键切换，方便对比不同页面。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="oss" id="oss" aria-label="开源">
+    <div class="oss-card">
+      <div class="oss-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+      </div>
+      <h3>开源</h3>
+      <p>Preview 完全开源，欢迎参与贡献。<br>你可以自由查看源码、提 Issue 或提交 Pull Request。</p>
+      <a href="https://github.com/ChibaQY/preview" class="oss-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        查看源码
+      </a>
+    </div>
+  </section>
+
+  <div class="footer">Preview · 本地 HTML 预览工具</div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeBtn');
+      var KEY = 'preview-theme';
+
+      function preferred() { return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+
+      function sync(t) {
+        root.setAttribute('data-theme', t);
+        root.style.colorScheme = t;
+        var sun = btn && btn.querySelector('.icon-sun');
+        var moon = btn && btn.querySelector('.icon-moon');
+        if (sun && moon) { sun.hidden = t === 'dark'; moon.hidden = t !== 'dark'; }
+        try { localStorage.setItem(KEY, t); } catch (_) {}
+      }
+
+      var s; try { s = localStorage.getItem(KEY); } catch (_) {}
+      sync(s || preferred());
+
+      if (btn) btn.addEventListener('click', function () {
+        var cur = root.getAttribute('data-theme') || preferred();
+        sync(cur === 'dark' ? 'light' : 'dark');
+      });
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        var saved; try { saved = localStorage.getItem(KEY); } catch (_) {}
+        if (!saved) sync(e.matches ? 'dark' : 'light');
+      });
+    })();
+
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+
+      var els = document.querySelectorAll('.fea, .oss');
+
+      if ('IntersectionObserver' in window && els.length) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -20px 0px' });
+
+        for (var i = 0; i < els.length; i++) obs.observe(els[i]);
+      } else {
+        for (var i = 0; i < els.length; i++) els[i].classList.add('is-visible');
+      }
+    })();
+  </script>
+
+</body>
+</html>
