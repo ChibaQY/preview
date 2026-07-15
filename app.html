@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f2f2f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151517" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Preview local HTML files in your browser">
+  <title>Preview</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+
+  <header class="bar" role="banner">
+    <div class="bar-left">
+      <button class="bar-btn" id="menuBtn" type="button" aria-label="切换侧栏">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="5" x2="17" y2="5"/>
+          <line x1="3" y1="10" x2="17" y2="10"/>
+          <line x1="3" y1="15" x2="17" y2="15"/>
+        </svg>
+      </button>
+      <span class="bar-title">Preview</span>
+      <span class="badge" id="fileBadge" hidden></span>
+    </div>
+    <div class="bar-right">
+      <button id="exitBtn" class="exit-btn" type="button" hidden aria-label="退出当前文件夹">✕ 关闭</button>
+      <button id="themeToggle" class="bar-btn" type="button" aria-label="切换深色模式">
+        <svg class="icon-sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <circle cx="10" cy="10" r="3.5"/>
+          <line x1="10" y1="1" x2="10" y2="3"/><line x1="10" y1="17" x2="10" y2="19"/>
+          <line x1="3.1" y1="3.1" x2="4.5" y2="4.5"/><line x1="15.5" y1="15.5" x2="16.9" y2="16.9"/>
+          <line x1="1" y1="10" x2="3" y2="10"/><line x1="17" y1="10" x2="19" y2="10"/>
+          <line x1="3.1" y1="16.9" x2="4.5" y2="15.5"/><line x1="15.5" y1="4.5" x2="16.9" y2="3.1"/>
+        </svg>
+        <svg class="icon-moon" hidden viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M17 10.5A7.5 7.5 0 1 1 9.5 3a6 6 0 0 0 7.5 7.5z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar" role="complementary" aria-label="文件列表">
+    <div class="sidebar-head">
+      <h2>文件</h2>
+      <button class="sidebar-close" id="sidebarClose" type="button" aria-label="关闭侧栏">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="4" x2="16" y2="16"/>
+          <line x1="16" y1="4" x2="4" y2="16"/>
+        </svg>
+      </button>
+    </div>
+    <div class="search-wrap">
+      <input type="search" id="searchInput" class="search-field" placeholder="搜索文件…" aria-label="搜索文件">
+    </div>
+    <div class="sidebar-body">
+      <ul class="tree" id="tree" role="tree" aria-label="文件夹结构"></ul>
+    </div>
+    <div class="sidebar-foot">
+      <span id="treeCount"></span>
+      <button id="refreshBtn" type="button" aria-label="重新加载" hidden>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="18 3 18 8 13 8"/>
+          <path d="M16.5 13.5a7.5 7.5 0 1 1-1.8-8L18 8"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="stage">
+
+    <section class="empty" id="empty" aria-label="欢迎">
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <h1>打开一个文件夹</h1>
+      <p>选择包含 HTML 文件的文件夹，预览会把每个页面及其依赖原样呈现。</p>
+      <div class="empty-actions">
+        <button id="openBtn" class="btn btn-primary" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+          选择文件夹
+        </button>
+        <p class="empty-hint">或拖拽文件夹 · <kbd>⌘O</kbd></p>
+      </div>
+    </section>
+
+    <section class="preview-area" id="previewArea" aria-hidden="true">
+      <div class="device-wrap" id="deviceWrap">
+        <div class="device is-phone" id="device">
+          <div class="device-notch" aria-hidden="true">
+            <div class="device-notch-speaker"></div>
+            <div class="device-notch-camera"></div>
+          </div>
+          <div class="device-screen">
+            <iframe id="preview"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals"
+              title="网页预览"></iframe>
+          </div>
+        </div>
+      </div>
+      <nav class="preview-nav" id="nav" aria-label="页面切换"></nav>
+    </section>
+
+  </main>
+
+  <div class="drag-veil" id="dragVeil" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+    </svg>
+    <p>释放以打开</p>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <input type="file" id="folderInput" webkitdirectory multiple class="visually-hidden"
+    accept=".html,.htm,.xhtml,.css,.js,.mjs,.json,.png,.jpg,.jpeg,.gif,.webp,.svg,.bmp,.ico,.txt,.md,.xml,.yaml,.yml,.toml,.pdf">
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
