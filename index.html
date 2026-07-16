@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="Preview — 选择文件夹，立即预览 HTML，不需要配置。">
   <title>Preview — 本地 HTML 预览</title>
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
@@ -123,83 +124,85 @@
 
   <section class="sec" aria-label="功能特性">
     <p class="sec-label">Features</p>
-    <div class="fea">
-      <div class="fea-v">
-        <div class="fm">
-          <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
-          <div class="fmbody">
-            <div class="fml w6"></div>
-            <div class="fml w8"></div>
-            <div class="fml w4"></div>
-            <div class="fml accent w6"></div>
-            <div class="fml w8"></div>
-            <div class="fml w3"></div>
+    <div class="fea-grid">
+      <div class="fea">
+        <div class="fea-v">
+          <div class="fm">
+            <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
+            <div class="fmbody">
+              <div class="fml" style="width:60%"></div>
+              <div class="fml" style="width:80%"></div>
+              <div class="fml" style="width:40%"></div>
+              <div class="fml" style="width:60%"></div>
+              <div class="fml" style="width:80%"></div>
+              <div class="fml" style="width:30%"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="fea-t">
-        <h3>本地运行</h3>
-        <p>无需服务器，不离开浏览器，直接在本地预览 HTML 文件及其所有依赖。打开文件夹，立刻看到页面。</p>
-      </div>
-    </div>
-    <div class="fea">
-      <div class="fea-v">
-        <div class="fdev">
-          <div class="fdp"><div class="fdpi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
-          <div class="fdt"><div class="fdti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
-          <div class="fdd"><div class="fddi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+        <div class="fea-t">
+          <h3>本地运行</h3>
+          <p>无需服务器，不离开浏览器，直接在本地预览 HTML 文件及其所有依赖。打开文件夹，立刻看到页面。</p>
         </div>
       </div>
-      <div class="fea-t">
-        <h3>多设备模拟</h3>
-        <p>自动根据窗口尺寸切换手机、平板、桌面三种预览外壳。所见即所得，不用打开开发者工具。</p>
-      </div>
-    </div>
-    <div class="fea">
-      <div class="fea-v">
-        <div class="fm">
-          <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
-          <div class="fmbody">
-            <div class="fml color w6"></div>
-            <div class="fml w8"></div>
-            <div class="fml color w4"></div>
-            <div class="fml w6"></div>
-            <div class="fml color w8"></div>
+      <div class="fea">
+        <div class="fea-v">
+          <div class="fdev">
+            <div class="fdp"><div class="fdpi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+            <div class="fdt"><div class="fdti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
+            <div class="fdd"><div class="fddi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div></div>
           </div>
         </div>
-      </div>
-      <div class="fea-t">
-        <h3>资源自动注入</h3>
-        <p>CSS、JS、图片、字体 — 页面引用的所有资源自动解析、内联加载。不需要配路径，打开就能看。</p>
-      </div>
-    </div>
-    <div class="fea">
-      <div class="fea-v">
-        <div class="ftab">
-          <div class="ft act"></div>
-          <div class="ft"></div>
-          <div class="ft"></div>
+        <div class="fea-t">
+          <h3>多设备模拟</h3>
+          <p>自动根据窗口尺寸切换手机、平板、桌面三种预览外壳。所见即所得，不用打开开发者工具。</p>
         </div>
       </div>
-      <div class="fea-t">
-        <h3>多页面切换</h3>
-        <p>文件夹里有多个 HTML 文件？底部的标签栏让你一键切换，方便对比不同页面。</p>
+      <div class="fea">
+        <div class="fea-v">
+          <div class="fm">
+            <div class="fmb"><div class="fmd"><div class="fmdo"></div><div class="fmdo"></div><div class="fmdo"></div></div></div>
+            <div class="fmbody">
+              <div class="fml" style="width:60%"></div>
+              <div class="fml" style="width:80%"></div>
+              <div class="fml" style="width:40%"></div>
+              <div class="fml" style="width:60%"></div>
+              <div class="fml" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="fea-t">
+          <h3>资源自动注入</h3>
+          <p>CSS、JS、图片、字体 — 页面引用的所有资源自动解析、内联加载。不需要配路径，打开就能看。</p>
+        </div>
+      </div>
+      <div class="fea">
+        <div class="fea-v">
+          <div class="ftab">
+            <div class="ft act"></div>
+            <div class="ft"></div>
+            <div class="ft"></div>
+          </div>
+        </div>
+        <div class="fea-t">
+          <h3>多页面切换</h3>
+          <p>文件夹里有多个 HTML 文件？底部的标签栏让你一键切换，方便对比不同页面。</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="oss" id="oss" aria-label="开源">
-    <div class="oss-card">
+    <div class="oss-inner">
       <div class="oss-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        <svg viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
         </svg>
       </div>
       <h3>开源</h3>
       <p>Preview 完全开源，欢迎参与贡献。<br>你可以自由查看源码、提 Issue 或提交 Pull Request。</p>
-      <a href="https://github.com/ChibaQY/preview" class="oss-link" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+      <a href="https://github.com/ChibaQY/preview" class="oss-link" id="ossLink" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
         </svg>
         查看源码
       </a>
